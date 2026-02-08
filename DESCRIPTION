@@ -1,0 +1,21 @@
+Package: rareflow
+Title: Variational Flow-Based Inference for Rare Events and Large
+    Deviations
+Version: 0.1.0
+Authors@R: 
+    person("Pietro", "Piu", , "pietro.piu.si@gmail.com", role = c("aut", "cre"))
+Description: Tools for modeling rare events using KL divergence,
+    normalizing flows, Girsanov change of measure, and Freidlin–Wentzell
+    action functionals.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+VignetteBuilder: knitr
+Suggests: 
+    knitr,
+    rmarkdown,
+    ggplot2,
+    gganimate,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
