@@ -2,7 +2,7 @@
 #'
 #' Computes the ELBO:
 #'
-#'   \eqn{\log p(x \mid z) + \log p(z) - \log q(z)}
+#'   \eqn{\log p(x \| z) + \log p(z) - \log q(z)}
 #'
 #' where:
 #'   - q(z) is the flow-based variational posterior

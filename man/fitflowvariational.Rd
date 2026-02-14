@@ -46,7 +46,7 @@ This function fits a variational posterior q(z) using a chosen normalizing flow.
 The objective is the ELBO:
 }
 \details{
-\eqn{\log p(x \mid z) + \log p(z) - \log q(z)}
+\eqn{\log p(x | z) + \log p(z) - \log q(z)}
 
 The flow parameters (theta) are optimized via \code{optim()} when applicable
 (MAF and spline flows). Planar and radial flows have no trainable parameters.

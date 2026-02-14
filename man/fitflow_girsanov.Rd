@@ -29,7 +29,7 @@ fitflow_girsanov(
 
 \item{inittheta}{Optional initial theta for trainable flows.}
 
-\item{base_pxgivenz}{Likelihood p(x|z) before tilting.}
+\item{base_pxgivenz}{Likelihood \eqn{p(x \mid z)} before tilting.}
 
 \item{theta_path}{Drift-tilting function or vector for Girsanov.}
 
@@ -39,7 +39,7 @@ fitflow_girsanov(
 
 \item{nmc}{Monte Carlo samples.}
 
-\item{control}{Control list for optim().}
+\item{control}{Control list for \code{optim()}.}
 }
 \value{
 Output of \code{fitflowvariational()}.
@@ -50,6 +50,6 @@ fits a flow-based variational posterior using \code{fitflowvariational()}.
 }
 \details{
 This is useful when the target distribution arises from a drift-tilted
-diffusion process, where the Radon–Nikodym derivative is given by the
+diffusion process, where the Radon-Nikodym derivative is given by the
 Girsanov theorem.
 }

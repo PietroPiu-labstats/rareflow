@@ -2,7 +2,7 @@
 % Please edit documentation in R/fit-freidlin-wentzell.R
 \name{fitflow_FW}
 \alias{fitflow_FW}
-\title{Fit Flow Using Freidlin–Wentzell Quasi-Potential}
+\title{Fit Flow Using Freidlin-Wentzell Quasi-Potential}
 \usage{
 fitflow_FW(
   observed,
@@ -31,7 +31,7 @@ fitflow_FW(
 
 \item{inittheta}{Optional initial theta.}
 
-\item{drift}{Drift function b(x).}
+\item{drift}{Drift function \eqn{b(x)}.}
 
 \item{x0}{Starting point.}
 
@@ -45,14 +45,14 @@ fitflow_FW(
 
 \item{nmc}{Monte Carlo samples.}
 
-\item{control}{Control list for optim().}
+\item{control}{Control list for \code{optim()}.}
 }
 \value{
 Output of \code{fitflowvariational()}.
 }
 \description{
-Computes the Freidlin–Wentzell quasi-potential between x0 and x1,
-constructs a tilted likelihood proportional to exp(-V/eps),
+Computes the Freidlin-Wentzell quasi-potential between \eqn{x_0} and \eqn{x_1},
+constructs a tilted likelihood proportional to \eqn{\exp(-V/\mathrm{eps})},
 and fits a flow-based variational posterior.
 }
 \details{

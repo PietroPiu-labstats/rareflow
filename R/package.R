@@ -8,4 +8,3 @@
 #'
 #' @keywords internal
 "_PACKAGE"
-

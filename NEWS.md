@@ -5,4 +5,3 @@
 * Provides `FW_quasipotential()` for computing minimum action paths and quasipotentials.
 * Includes a comprehensive vignette introducing the theory of large deviations (Sanov, Girsanov, Freidlin–Wentzell) with practical examples.
 * Offers clean, reproducible implementations suitable for research, teaching, and scientific communication.
-

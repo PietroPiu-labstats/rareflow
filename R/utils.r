@@ -86,4 +86,3 @@ softmax <- function(x) {
 #' @aliases %||%
 #' @keywords internal
 `%||%` <- function(a, b) if (is.null(a)) b else a
-

@@ -7,9 +7,9 @@
 girsanov_logratio(theta_path, Winc, dt)
 }
 \arguments{
-\item{theta_path}{Numeric vector of drift tilts θ_t.}
+\item{theta_path}{Numeric vector of drift tilts \eqn{\theta_t}.}
 
-\item{Winc}{Numeric vector of Brownian increments ΔW_t.}
+\item{Winc}{Numeric vector of Brownian increments \eqn{\Delta W_t}.}
 
 \item{dt}{Time step size.}
 }
@@ -17,7 +17,7 @@ girsanov_logratio(theta_path, Winc, dt)
 A numeric log-likelihood ratio.
 }
 \description{
-Computes the Radon–Nikodym derivative (log form) associated with a
+Computes the Radon-Nikodym derivative (log form) associated with a
 Girsanov change of measure for an SDE:
 }
 \details{
@@ -29,8 +29,10 @@ tilted by an alternative drift:
 
 The log-likelihood ratio is:
 
-\eqn{\log \frac{dQ}{dP}
-    = \sum_t \left( \theta_t W_{t} - \frac{1}{2}\theta_t^2\, dt \right)}.
+\deqn{
+  \log \frac{dQ}{dP}
+    = \sum_t \left( \theta_t W_t - \frac{1}{2}\theta_t^2\, dt \right)
+}
 
 This function returns the log-ratio for a given path of drift tilts
 \code{theta_path}, Brownian increments \code{Winc}, and time step \code{dt}.

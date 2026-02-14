@@ -23,7 +23,7 @@ A flow model object with methods:
 }
 \description{
 A simple and readable implementation of a 1-dimensional planar flow:
-z_K = z_0 + u * h(w * z_0 + b)
+z_K = z_0 + u * h(wz_0 + b)
 }
 \details{
 where:

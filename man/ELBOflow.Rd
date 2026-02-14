@@ -22,7 +22,7 @@ A numeric ELBO value.
 Computes the ELBO:
 }
 \details{
-\eqn{\log p(x \mid z) + \log p(z) - \log q(z)}
+\eqn{\log p(x \| z) + \log p(z) - \log q(z)}
 
 where:
 \itemize{

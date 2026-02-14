@@ -2,12 +2,12 @@
 % Please edit documentation in R/friedlin-wentzell.R
 \name{Freidlin_Wentzell_action}
 \alias{Freidlin_Wentzell_action}
-\title{Freidlin–Wentzell Action Functional}
+\title{Freidlin-Wentzell Action Functional}
 \usage{
 Freidlin_Wentzell_action(phi, drift, dt)
 }
 \arguments{
-\item{phi}{Matrix of path values (T × d).}
+\item{phi}{Matrix of path values of dimension \eqn{T \times d}.}
 
 \item{drift}{Drift function \eqn{b(x)} returning a numeric vector.}
 
@@ -17,18 +17,19 @@ Freidlin_Wentzell_action(phi, drift, dt)
 Numeric action value.
 }
 \description{
-Computes the discrete Freidlin–Wentzell action for a path \eqn{\phi(t)}
-represented as a matrix of size T × d. The continuous action is:
+Computes the discrete Freidlin-Wentzell action for a path \eqn{\phi(t)}
+represented as a matrix of size \eqn{T \times d}. The continuous action is:
 }
 \details{
 \deqn{
-  I[\phi] = \frac{1}{2} \int_0^T \| \dot{\phi}(t) - b(\phi(t)) \|^2 dt,
+  I[\phi] = \frac{1}{2} \int_0^T
+  \lVert \dot{\phi}(t) - b(\phi(t)) \rVert^2 \, dt
 }
 
 and the discrete approximation is:
 
 \deqn{
   I \approx \frac{1}{2} \sum_{t=1}^{T-1}
-    \| (\phi_{t+1} - \phi_t)/dt - b(\phi_t) \|^2 \, dt.
+    \lVert (\phi_{t+1} - \phi_t)/dt - b(\phi_t) \rVert^2 \, dt
 }
 }

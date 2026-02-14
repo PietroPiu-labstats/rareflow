@@ -27,10 +27,10 @@ based on the \code{flowtype} argument.
 \details{
 Supported flow types:
 \itemize{
-\item "planar"       → planarflowmodel()
-\item "radial"       → radialflowmodel()
-\item "maf"          → mafflowmodel()
-\item "splinepwlin"  → splinepwlinflowmodel()
+\item "planar"       -> planarflowmodel()
+\item "radial"       -> radialflowmodel()
+\item "maf"          -> mafflowmodel()
+\item "splinepwlin"  -> splinepwlinflowmodel()
 }
 }
 \examples{

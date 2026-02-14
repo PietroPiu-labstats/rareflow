@@ -2,7 +2,7 @@
 % Please edit documentation in R/friedlin-wentzell.R
 \name{FW_quasipotential}
 \alias{FW_quasipotential}
-\title{Freidlin–Wentzell Quasi-Potential via Path Minimization}
+\title{Freidlin-Wentzell Quasi-Potential via Path Minimization}
 \usage{
 FW_quasipotential(
   x0,
@@ -19,7 +19,7 @@ FW_quasipotential(
 
 \item{x1}{Target point (numeric vector).}
 
-\item{drift}{Drift function b(x).}
+\item{drift}{Drift function \eqn{b(x)}.}
 
 \item{T}{Number of time steps.}
 
@@ -32,20 +32,20 @@ FW_quasipotential(
 \value{
 A list with:
 \itemize{
-\item path: matrix of size T × d
-\item action: FW action of the optimized path
+  \item path: matrix of size \eqn{T \times d}
+  \item action: FW action of the optimized path
 }
 }
 \description{
-Computes an approximate Freidlin–Wentzell quasi-potential between two
+Computes an approximate Freidlin-Wentzell quasi-potential between two
 points \eqn{x_0} and \eqn{x_1} by minimizing the FW action functional
 over discretized paths.
 }
 \details{
 The algorithm:
 \enumerate{
-\item Initializes a straight-line path between x0 and x1.
-\item Performs simple gradient descent on the FW action.
+  \item Initializes a straight-line path between \eqn{x_0} and \eqn{x_1}.
+  \item Performs simple gradient descent on the FW action.
 }
 
 This is a naive but effective illustrative method for low-dimensional

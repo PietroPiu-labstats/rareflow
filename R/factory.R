@@ -5,10 +5,10 @@
 #' based on the `flowtype` argument.
 #'
 #' Supported flow types:
-#'   - "planar"       → planarflowmodel()
-#'   - "radial"       → radialflowmodel()
-#'   - "maf"          → mafflowmodel()
-#'   - "splinepwlin"  → splinepwlinflowmodel()
+#'   - "planar"       -> planarflowmodel()
+#'   - "radial"       -> radialflowmodel()
+#'   - "maf"          -> mafflowmodel()
+#'   - "splinepwlin"  -> splinepwlinflowmodel()
 #'
 #' @param flowtype Character string specifying the flow type.
 #' @param params A named list of parameters required by the chosen flow.

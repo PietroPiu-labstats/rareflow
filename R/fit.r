@@ -3,7 +3,7 @@
 #' This function fits a variational posterior q(z) using a chosen normalizing flow.
 #' The objective is the ELBO:
 #'
-#'   \eqn{\log p(x \mid z) + \log p(z) - \log q(z)}
+#'   \eqn{\log p(x | z) + \log p(z) - \log q(z)}
 #'
 #' The flow parameters (theta) are optimized via `optim()` when applicable
 #' (MAF and spline flows). Planar and radial flows have no trainable parameters.
@@ -88,7 +88,7 @@ fitflowvariational <- function(observed,
   )
 
   # ------------------------------------------------------------
-  # Case 1: planar/radial → no trainable parameters
+  # Case 1: planar/radial -> no trainable parameters
   # ------------------------------------------------------------
   if (flowtype %in% c("planar", "radial")) {
     elbo0 <- ELBOflow(flow0, observed, pxgivenz, nmc)

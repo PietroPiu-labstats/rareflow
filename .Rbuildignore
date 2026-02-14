@@ -3,3 +3,7 @@
 ^LICENSE\.md$
 ^doc$
 ^Meta$
+^latex\.log$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

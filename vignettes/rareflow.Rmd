@@ -394,6 +394,5 @@ Future extensions may include:
 ## References
 
 - Dembo, A., & Zeitouni, O. (1998). *Large Deviations Techniques and Applications*. Springer.
-- Øksendal, B. (2003). *Stochastic Differential Equations: An Introduction with Applications*. Springer.
+- Oksendal, B. (2003). *Stochastic Differential Equations: An Introduction with Applications*. Springer.
 - Freidlin, M. I., & Wentzell, A. D. (2012). *Random Perturbations of Dynamical Systems*. Springer.
-

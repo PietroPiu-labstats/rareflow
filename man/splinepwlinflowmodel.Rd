@@ -16,20 +16,21 @@ splinepwlinflowmodel(d = 2, K = 8, theta = NULL)
 \value{
 A flow model object with methods:
 \itemize{
-\item sampleq(n)
-\item logq(z0)
-\item applyflow(z0)
+  \item sampleq(n)
+  \item logq(z0)
+  \item applyflow(z0)
 }
 }
 \description{
 A readable implementation of a monotone piecewise-linear spline flow.
-Each dimension is transformed independently using:
+Each dimension is transformed independently using learned spline parameters.
 }
 \details{
+The spline flow uses:
 \itemize{
-\item K bins with learned widths (w) and heights (h)
-\item softmax ensures positivity and normalization
-\item the transformation is applied in sigmoid space for stability
+  \item \eqn{K} bins with learned widths \eqn{w} and heights \eqn{h}
+  \item a softmax transformation to ensure positivity and normalization
+  \item a sigmoid reparameterization for numerical stability
 }
 
 The flow is invertible and differentiable almost everywhere.

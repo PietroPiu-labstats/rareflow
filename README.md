@@ -2,8 +2,7 @@
 
 **Normalizing Flows for Rare-Event Inference**
 
-[![R-CMD-check](https://github.com/PietroPiu-labstats/rareflow/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/PietroPiu-labstats/rareflow/actions)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![License: GPL-3](https://img.shields.io/badge/license-GPL--3-blue.svg)
 
 ---
 
@@ -91,6 +90,3 @@ vignette("rareflow")
 * Support for 1D and 2D systems
 
 * Modular flow architecture
-
-## License
-GPL License

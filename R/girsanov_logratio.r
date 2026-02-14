@@ -17,8 +17,8 @@
 #' This function returns the log-ratio for a given path of drift tilts
 #' `theta_path`, Brownian increments `Winc`, and time step `dt`.
 #'
-#' @param theta_path Numeric vector of drift tilts θ_t.
-#' @param Winc Numeric vector of Brownian increments ΔW_t.
+#' @param theta_path Numeric vector of drift tilts \eqn{\theta_t}.
+#' @param Winc Numeric vector of Brownian increments \eqn{\Delta W_t}.
 #' @param dt Time step size.
 #'
 #' @return A numeric log-likelihood ratio.
