@@ -3,9 +3,9 @@
 .RData
 .Ruserdata
 inst/doc
-/doc/
+#/doc/
 /Meta/
 .httr-oauth
 .DS_Store
 .quarto
-docs
+#docs
