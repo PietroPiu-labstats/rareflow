@@ -1,0 +1,48 @@
+url: https://pietropiu-labstats.github.io/rareflow/
+
+template:
+  bootstrap: 5
+
+navbar:
+  structure:
+    left: [reference, articles]
+    right: [github]
+  components:
+    github:
+      icon: fab fa-github
+      aria-label: "GitHub repository"
+      href: https://github.com/PietroPiu-labstats/rareflow
+
+articles:
+  - title: "Vignettes"
+    contents:
+      - starts_with("rareflow")
+
+reference:
+  - title: "Core Methods"
+    contents:
+      - Freidlin_Wentzell_action
+      - FW_quasipotential
+      - girsanov_logratio
+      - KLdiv
+      - sanovprob
+
+  - title: "Flow Models"
+    contents:
+      - mafflowmodel
+      - planarflowmodel
+      - radialflowmodel
+      - splinepwlinflowmodel
+
+  - title: "Flow Fitting"
+    contents:
+      - fitflowvariational
+      - fitflow_FW
+      - fitflow_girsanov
+      - ELBOflow
+
+  - title: "Model Constructors"
+    contents:
+      - makeflow
+      - makebiolik
+      - makeneurolik
