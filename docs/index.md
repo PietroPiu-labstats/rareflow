@@ -1,4 +1,4 @@
-# rareflow ![](https://raw.githubusercontent.com/PietroPiu-labstats/rareflow/main/man/figures/logo.png)
+# rareflow: Variational Flow-Based Inference for Rare Events
 
 **Normalizing Flows for Rare-Event Inference**
 

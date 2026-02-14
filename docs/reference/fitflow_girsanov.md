@@ -46,7 +46,7 @@ fitflow_girsanov(
 
 - base_pxgivenz:
 
-  Likelihood \\p(x \mid z)\\ before tilting.
+  Likelihood p(x\|z) before tilting.
 
 - theta_path:
 
@@ -66,7 +66,7 @@ fitflow_girsanov(
 
 - control:
 
-  Control list for [`optim()`](https://rdrr.io/r/stats/optim.html).
+  Control list for optim().
 
 ## Value
 
@@ -76,5 +76,5 @@ Output of
 ## Details
 
 This is useful when the target distribution arises from a drift-tilted
-diffusion process, where the Radon-Nikodym derivative is given by the
+diffusion process, where the Radon–Nikodym derivative is given by the
 Girsanov theorem.

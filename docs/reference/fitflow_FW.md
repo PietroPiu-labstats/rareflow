@@ -1,8 +1,8 @@
-# Fit Flow Using Freidlin-Wentzell Quasi-Potential
+# Fit Flow Using Freidlin–Wentzell Quasi-Potential
 
-Computes the Freidlin-Wentzell quasi-potential between \\x_0\\ and
-\\x_1\\, constructs a tilted likelihood proportional to
-\\\exp(-V/\mathrm{eps})\\, and fits a flow-based variational posterior.
+Computes the Freidlin–Wentzell quasi-potential between x0 and x1,
+constructs a tilted likelihood proportional to exp(-V/eps), and fits a
+flow-based variational posterior.
 
 ## Usage
 
@@ -48,7 +48,7 @@ fitflow_FW(
 
 - drift:
 
-  Drift function \\b(x)\\.
+  Drift function b(x).
 
 - x0:
 
@@ -76,7 +76,7 @@ fitflow_FW(
 
 - control:
 
-  Control list for [`optim()`](https://rdrr.io/r/stats/optim.html).
+  Control list for optim().
 
 ## Value
 

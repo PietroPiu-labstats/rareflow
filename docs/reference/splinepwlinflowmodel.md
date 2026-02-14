@@ -1,8 +1,7 @@
 # Piecewise-Linear Spline Flow (Monotone)
 
 A readable implementation of a monotone piecewise-linear spline flow.
-Each dimension is transformed independently using learned spline
-parameters.
+Each dimension is transformed independently using:
 
 ## Usage
 
@@ -36,12 +35,10 @@ A flow model object with methods:
 
 ## Details
 
-The spline flow uses:
+- K bins with learned widths (w) and heights (h)
 
-- \\K\\ bins with learned widths \\w\\ and heights \\h\\
+- softmax ensures positivity and normalization
 
-- a softmax transformation to ensure positivity and normalization
-
-- a sigmoid reparameterization for numerical stability
+- the transformation is applied in sigmoid space for stability
 
 The flow is invertible and differentiable almost everywhere.

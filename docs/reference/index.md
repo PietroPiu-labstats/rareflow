@@ -3,9 +3,11 @@
 ## Core Methods
 
 - [`Freidlin_Wentzell_action()`](https://pietropiu-labstats.github.io/rareflow/reference/Freidlin_Wentzell_action.md)
-  : Freidlin-Wentzell Action Functional
+  : Freidlin–Wentzell Action Functional
 - [`FW_quasipotential()`](https://pietropiu-labstats.github.io/rareflow/reference/FW_quasipotential.md)
-  : Freidlin-Wentzell Quasi-Potential via Path Minimization
+  : Freidlin–Wentzell Quasi-Potential via Path Minimization
+- [`FW_minimum_action_path()`](https://pietropiu-labstats.github.io/rareflow/reference/FW_minimum_action_path.md)
+  : Minimum Action Path (MAP)
 - [`girsanov_logratio()`](https://pietropiu-labstats.github.io/rareflow/reference/girsanov_logratio.md)
   : Girsanov Log-Ratio for Drift-Tilted Diffusions
 - [`KLdiv()`](https://pietropiu-labstats.github.io/rareflow/reference/KLdiv.md)
@@ -29,7 +31,7 @@
 - [`fitflowvariational()`](https://pietropiu-labstats.github.io/rareflow/reference/fitflowvariational.md)
   : Fit a Flow-Based Variational Posterior for Sanov Inference
 - [`fitflow_FW()`](https://pietropiu-labstats.github.io/rareflow/reference/fitflow_FW.md)
-  : Fit Flow Using Freidlin-Wentzell Quasi-Potential
+  : Fit Flow Using Freidlin–Wentzell Quasi-Potential
 - [`fitflow_girsanov()`](https://pietropiu-labstats.github.io/rareflow/reference/fitflow_girsanov.md)
   : Fit Flow with Girsanov-Tilted Likelihood
 - [`ELBOflow()`](https://pietropiu-labstats.github.io/rareflow/reference/ELBOflow.md)

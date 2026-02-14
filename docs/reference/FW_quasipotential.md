@@ -1,6 +1,6 @@
-# Freidlin-Wentzell Quasi-Potential via Path Minimization
+# Freidlin–Wentzell Quasi-Potential via Path Minimization
 
-Computes an approximate Freidlin-Wentzell quasi-potential between two
+Computes an approximate Freidlin–Wentzell quasi-potential between two
 points \\x_0\\ and \\x_1\\ by minimizing the FW action functional over
 discretized paths.
 
@@ -30,7 +30,7 @@ FW_quasipotential(
 
 - drift:
 
-  Drift function \\b(x)\\.
+  Drift function b(x).
 
 - T:
 
@@ -52,7 +52,7 @@ FW_quasipotential(
 
 A list with:
 
-- path: matrix of size \\T \times d\\
+- path: matrix of size T × d
 
 - action: FW action of the optimized path
 
@@ -60,7 +60,7 @@ A list with:
 
 The algorithm:
 
-1.  Initializes a straight-line path between \\x_0\\ and \\x_1\\.
+1.  Initializes a straight-line path between x0 and x1.
 
 2.  Performs simple gradient descent on the FW action.
 

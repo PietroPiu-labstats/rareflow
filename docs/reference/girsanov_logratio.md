@@ -1,6 +1,6 @@
 # Girsanov Log-Ratio for Drift-Tilted Diffusions
 
-Computes the Radon-Nikodym derivative (log form) associated with a
+Computes the Radon–Nikodym derivative (log form) associated with a
 Girsanov change of measure for an SDE:
 
 ## Usage
@@ -37,8 +37,8 @@ tilted by an alternative drift:
 
 The log-likelihood ratio is:
 
-\$\$ \log \frac{dQ}{dP} = \sum_t \left( \theta_t W_t -
-\frac{1}{2}\theta_t^2\\ dt \right) \$\$
+\\\log \frac{dQ}{dP} = \sum_t \left( \theta_t W\_{t} -
+\frac{1}{2}\theta_t^2\\ dt \right)\\.
 
 This function returns the log-ratio for a given path of drift tilts
 `theta_path`, Brownian increments `Winc`, and time step `dt`.

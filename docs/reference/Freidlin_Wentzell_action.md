@@ -1,8 +1,7 @@
-# Freidlin-Wentzell Action Functional
+# Freidlin–Wentzell Action Functional
 
-Computes the discrete Freidlin-Wentzell action for a path \\\phi(t)\\
-represented as a matrix of size \\T \times d\\. The continuous action
-is:
+Computes the discrete Freidlin–Wentzell action for a path \\\phi(t)\\
+represented as a matrix of size T × d. The continuous action is:
 
 ## Usage
 
@@ -14,7 +13,7 @@ Freidlin_Wentzell_action(phi, drift, dt)
 
 - phi:
 
-  Matrix of path values of dimension \\T \times d\\.
+  Matrix of path values (T × d).
 
 - drift:
 
@@ -30,10 +29,10 @@ Numeric action value.
 
 ## Details
 
-\$\$ I\[\phi\] = \frac{1}{2} \int_0^T \lVert \dot{\phi}(t) - b(\phi(t))
-\rVert^2 \\ dt \$\$
+\$\$ I\[\phi\] = \frac{1}{2} \int_0^T \\ \dot{\phi}(t) - b(\phi(t)) \\^2
+dt, \$\$
 
 and the discrete approximation is:
 
-\$\$ I \approx \frac{1}{2} \sum\_{t=1}^{T-1} \lVert (\phi\_{t+1} -
-\phi_t)/dt - b(\phi_t) \rVert^2 \\ dt \$\$
+\$\$ I \approx \frac{1}{2} \sum\_{t=1}^{T-1} \\ (\phi\_{t+1} -
+\phi_t)/dt - b(\phi_t) \\^2 \\ dt. \$\$
