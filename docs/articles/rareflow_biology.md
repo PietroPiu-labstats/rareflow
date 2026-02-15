@@ -74,14 +74,12 @@ sim <- simulate_sde(
 df <- as.data.frame(sim$X)
 colnames(df) <- c("x1", "x2")
 df$time <- seq_len(nrow(df))
-ggplot(df, aes(x1, x2, color = time)) +
-  geom_path(alpha = 0.7) +
-  scale_color_viridis_c() +
-  theme_minimal() +
-  labs(title = "Stochastic trajectory in gene expression space")
+#ggplot(df, aes(x1, x2, color = time)) +
+#  geom_path(alpha = 0.7) +
+#  scale_color_viridis_c() +
+#  theme_minimal() +
+#  labs(title = "Stochastic trajectory in gene expression space")
 ```
-
-![](rareflow_biology_files/figure-html/unnamed-chunk-3-1.png)
 
 ## Fitting a Freidlin–Wentzell model with rareflow
 
@@ -124,14 +122,12 @@ V_vals <- apply(landscape_grid, 1, function(z) {
 
 landscape_grid$V <- V_vals
 
-ggplot(landscape_grid, aes(x, y, z = V)) +
-  geom_contour_filled(bins = 20) +
-  scale_fill_viridis_d() +
-  theme_minimal() +
-  labs(title = "Schematic epigenetic landscape (FW quasipotential)")
+#ggplot(landscape_grid, aes(x, y, z = V)) +
+#  geom_contour_filled(bins = 20) +
+#  scale_fill_viridis_d() +
+#  theme_minimal() +
+#  labs(title = "Schematic epigenetic landscape (FW quasipotential)")
 ```
-
-![](rareflow_biology_files/figure-html/unnamed-chunk-5-1.png)
 
 ## Minimum action path: the most probable differentiation trajectory
 
@@ -163,18 +159,10 @@ path_df <- as.data.frame(path_matrix)
 colnames(path_df) <- c("x1", "x2")
 path_df$step <- seq_len(nrow(path_df))
 
-ggplot(path_df, aes(x1, x2)) +
-  geom_path(color = "red", size = 1) +
-  theme_minimal() +
-  labs(title = "Minimum action path (MAP)")
-#> Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-#> ℹ Please use `linewidth` instead.
-#> This warning is displayed once every 8 hours.
-#> Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-#> generated.
+#ggplot(path_df, aes(x1, x2)) +
+#  theme_minimal() +
+# lab(title = "Minimum action path (MAP)")
 ```
-
-![](rareflow_biology_files/figure-html/unnamed-chunk-6-1.png)
 
 ## Overlay MAP on the FW landscape
 
@@ -182,17 +170,122 @@ ggplot(path_df, aes(x1, x2)) +
 path_df <- as.data.frame(path_matrix)
 colnames(path_df) <- c("x1", "x2")
 
-ggplot(landscape_grid, aes(x, y, z = V)) +
-  geom_contour_filled(bins = 20, alpha = 0.8) +
-  scale_fill_viridis_d() +
-  geom_path(data = path_df, aes(x1, x2),
-            color = "red", size = 1.2, inherit.aes = FALSE
-) +
-  theme_minimal() +
-  labs(title = "Minimum action path over the epigenetic landscape")
+#ggplot(landscape_grid, aes(x, y, z = V)) +
+#  geom_contour_filled(bins = 20, alpha = 0.8) +
+#  scale_fill_viridis_d() +
+#  geom_path(data = path_df, aes(x1, x2),
+#            color = "red", size = 1.2, inherit.aes = FALSE
+#) +
+#  theme_minimal() +
+#  labs(title = "Minimum action path over the epigenetic landscape")
 ```
 
-![](rareflow_biology_files/figure-html/unnamed-chunk-7-1.png)
+``` r
+library(ggplot2)
+library(viridis)
+library(patchwork)
+library(dplyr)
+library(grid)
+
+# ---- Directional Arrows on MAP ----
+path_df_arrows <- path_df %>%
+  mutate(x1_next = lead(x1), x2_next = lead(x2)) %>%
+  filter(!is.na(x1_next))
+
+# ---- Nature-style Theme ----
+theme_nature <- theme_minimal(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", size = 14),
+    plot.subtitle = element_text(size = 10, margin = margin(b = 5)),
+    axis.title = element_text(size = 11),
+    axis.text = element_text(size = 10),
+    legend.position = "right",
+    panel.grid.minor = element_blank()
+  )
+
+# ---- Panel A: Stochastic Trajectory----
+pA <- ggplot(df, aes(x1, x2, color = time)) +
+  geom_path(alpha = 0.7, size = 0.6) +
+  scale_color_viridis_c() +
+  theme_nature +
+  labs(
+    title = "A. Stochastic trajectory",
+    subtitle = "Noise-driven excursions around the progenitor state",
+    color = "Time"
+  )
+
+# ---- Panel B: FW Landscape----
+pB <- ggplot(landscape_grid, aes(x, y, z = V)) +
+  geom_contour_filled(bins = 20) +
+  scale_fill_viridis_d(option = "mako") +
+  theme_nature +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.2, "cm"),
+    legend.key.height = unit(0.4, "cm"),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 9),
+    plot.margin = margin(t = 20, r = 10, b = 15, l = 10)
+  ) +
+  labs(
+    title = "B. Epigenetic landscape (FW quasipotential)",
+    subtitle = "Dark basins = stable phenotypes; shallow region = progenitor state",
+    fill = "V(x)"
+  )
+
+# ---- Panel C: MAP ----
+pC <- ggplot(path_df, aes(x1, x2)) +
+  geom_path(color = "red", size = 1) +
+  geom_segment(
+    data = path_df_arrows,
+    aes(x = x1, y = x2, xend = x1_next, yend = x2_next),
+    arrow = arrow(type = "closed", length = unit(0.15, "cm")),
+    color = "red"
+  ) +
+  theme_nature +
+  labs(
+    title = "C. Minimum action path (MAP)",
+    subtitle = "Most probable transition trajectory under weak noise"
+  )
+
+# ---- Panel D: MAP + Landscape ----
+pD <- ggplot(landscape_grid, aes(x, y, z = V)) +
+  geom_contour_filled(bins = 20, alpha = 0.85) +
+  scale_fill_viridis_d(option = "mako") +
+  geom_path(
+    data = path_df,
+    aes(x = x1, y = x2),
+    color = "red", size = 1.2,
+    inherit.aes = FALSE
+  ) +
+  geom_segment(
+    data = path_df_arrows,
+    aes(x = x1, y = x2, xend = x1_next, yend = x2_next),
+    arrow = arrow(type = "closed", length = unit(0.15, "cm")),
+    color = "red",
+    inherit.aes = FALSE
+  ) +
+  theme_nature +
+  theme(
+    legend.position = "bottom",
+    legend.key.width = unit(1.2, "cm"),
+    legend.key.height = unit(0.4, "cm"),
+    legend.title = element_text(size = 10),
+    legend.text = element_text(size = 9),
+    plot.margin = margin(t = 20, r = 10, b = 15, l = 10)
+  ) +
+  labs(
+    title = "D. MAP over the FW landscape",
+    subtitle = "The MAP crosses the saddle region: the most probable transition point",
+    fill = "V(x)"
+  )
+
+# ---- Final 2×2 composition----
+(pA | pB) /
+(pC | pD)
+```
+
+![](rareflow_biology_files/figure-html/fig-nature-1.png)
 
 ## Biological interpretation
 
